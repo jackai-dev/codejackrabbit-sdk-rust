@@ -1,0 +1,23 @@
+[package]
+name = "codejackrabbit_sdk"
+version = "0.2.0"
+edition = "2021"
+rust-version = "1.86"
+description = "Official OpenAPI 3.1.0 specification for CodeJackRabbit (cjr) -- 5-stage autonomous code review, blast-radius graph, multi-file autofix, supply-chain SBOM, contract drift, SARIF 2.1.0 compliance gates, stacked PR splitting, FinOps guard, and @jackai/app-sdk multi-surface SaaS metering."
+license-file = "LICENSE"
+
+include = ["src/**", "Cargo.toml", "Cargo.lock", "README.md", "api.md", "LICENSE", "omniwrap-artifact.json"]
+
+[package.metadata.omniwrap]
+schema = "https://omniwrap.dev/schemas/rust-package/v2"
+source_version_present = true
+source_version_utf8_hex = "302e322e30"
+
+[dependencies]
+base64 = "0.22.1"
+futures-core = "0.3.32"
+reqwest = { version = "0.12.28", default-features = false, features = ["json", "multipart", "rustls-tls"] }
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.150"
+tokio = { version = "1.52.3", features = ["macros", "rt-multi-thread", "time"] }
+urlencoding = "2.1.3"
